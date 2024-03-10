@@ -1,0 +1,39 @@
+
+nav {
+    background-color:rgb(32, 161, 216);; 
+    top: 0;
+    width: 97.3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+  }
+  
+  nav a {
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white; 
+  }
+  
+  nav a:hover {
+    background-color: #555; 
+  }
+  
+  nav ul {
+    text-align: right;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 20px; 
+  }
+ 
+  .profile-image {
+    height: 5vh; /* adjust as needed */
+    width: 5vh; /* adjust as needed */
+    margin-left: 20px;
+  }
