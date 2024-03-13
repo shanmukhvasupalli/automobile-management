@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       {/* <h3 align="center">Automobile Management System</h3> */}
      <Router>
-        <MainNavBar/>
+        {/* <MainNavBar/> */}
         {/* <AdminNavBar/> */}
         {/* <SellerNavBar/> */}
      </Router>

@@ -1,22 +1,28 @@
 nav {
-  background-color:rgb(32, 161, 216);
+  background-color: rgb(32, 161, 216); /* Retaining the original color */
   top: 0;
   width: 97.3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2); /* Adds a subtle highlight at the bottom */
 }
 
 nav a {
   display: inline-block;
   padding: 5px 20px;
   text-decoration: none;
-  color: white; 
+  color: white;
+  text-transform: uppercase; /* Makes the menu items stand out */
+  letter-spacing: 1px; /* Increases readability */
+  transition: color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
 }
 
 nav a:hover {
-  background-color:rgb(24, 122, 164);
+  background-color: rgb(24, 122, 164); /* Darker shade on hover */
+  color: #fff; /* Ensures text color remains white */
+  transform: translateY(-2px); /* Slight raise effect on hover */
 }
 
 nav ul {
