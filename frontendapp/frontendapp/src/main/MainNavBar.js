@@ -25,7 +25,7 @@ export default function MainNavBar() {
             <Link to="/contact">Contact</Link>
             <Link to="/registration">Sign Up</Link>
             <Link to="/userlogin">Login</Link>
-            <Link to="/sellerlogin">Be a Seller</Link>
+            <Link to="/sellerlogin">Seller Login</Link>
             <Link to="/adminlogin">Admin Login</Link>
             {/* updatation of profile image here ./../images/user.png */}
             <Link to ="/myprofile"><img src={ProfileImage} alt="Profile" className="profile-image"/></Link>

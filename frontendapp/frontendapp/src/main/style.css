@@ -1,7 +1,7 @@
 nav {
   background-color: rgb(32, 161, 216); /* Retaining the original color */
   top: 0;
-  width: 97.3%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

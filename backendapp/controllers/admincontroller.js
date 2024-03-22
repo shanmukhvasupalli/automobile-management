@@ -79,7 +79,6 @@ const viewusers = async (request, response) =>
       response.status(500).send(error.message);
     }
   };
-
 const deleteseller = async (request, response) => 
   {
      try 
@@ -95,7 +94,6 @@ const deleteseller = async (request, response) =>
        {
          response.send("Email ID Not Found")
        }
- 
      } 
      catch (error) 
      {
