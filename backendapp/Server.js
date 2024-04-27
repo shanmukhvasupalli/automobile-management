@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 
-const dburl = "mongodb://localhost:27017/automobile"
+const dburl = "mongodb+srv://shannu:shannu@cluster0.pxfynep.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 mongoose.connect(dburl).then(() => {
     console.log("Connected to DB Successfully")
 }).catch((err) => {
