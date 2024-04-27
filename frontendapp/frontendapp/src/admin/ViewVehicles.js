@@ -6,7 +6,7 @@ export default function AdminViewVehicles() {
 
   const fetchVehicles = async () => {
     try {
-      const response = await axios.get('http://localhost:2024/viewvehicles');
+      const response = await axios.get('https://automobile-management.onrender.com/viewvehicles');
       setVehicles(response.data);
     } catch (error) {
       console.error(error.message);
@@ -20,7 +20,7 @@ export default function AdminViewVehicles() {
 
   const deleteVehicle = async (id) => {
     try {
-      await axios.delete(`http://localhost:2024/deletevehicle/${id}`);
+      await axios.delete(`https://automobile-management.onrender.com/deletevehicle/${id}`);
       fetchVehicles();
     } catch (error) {
       console.error(error.message);
@@ -35,7 +35,7 @@ export default function AdminViewVehicles() {
           vehicles.map((vehicle, index) => (
             <div key={index} className="card">
               <div className="card-image">
-                <img src={`http://localhost:2024/vehicleimage/${vehicle.file}`} alt="vehicle" />
+                <img src={`https://automobile-management.onrender.com/vehicleimage/${vehicle.file}`} alt="vehicle" />
               </div>
               <div className="card-details">
                 <h2>{vehicle.title}</h2>

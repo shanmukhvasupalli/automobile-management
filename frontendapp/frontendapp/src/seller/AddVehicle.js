@@ -35,7 +35,7 @@ export default function AddVehicle() {
             for (let key in formData) {
                 formDataToSend.append(key, formData[key]);
             }
-            const response = await axios.post('http://localhost:2024/addvehicle', formDataToSend);
+            const response = await axios.post('https://automobile-management.onrender.com/addvehicle', formDataToSend);
 
             if (response.status === 200) {
                 setFormData({

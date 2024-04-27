@@ -13,7 +13,7 @@ export default function ViewUsers() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:2024/viewusers');
+      const response = await axios.get('https://automobile-management.onrender.com/viewusers');
       setUsers(response.data);
     } catch (error) {
       console.error(error.message);
@@ -26,7 +26,7 @@ export default function ViewUsers() {
 
   const deleteUsers = async (email) => {
     try {
-      await axios.delete(`http://localhost:2024/deleteuser/${email}`);
+      await axios.delete(`https://automobile-management.onrender.com/deleteuser/${email}`);
       fetchUsers();
     } catch (error) {
       console.error(error.message);

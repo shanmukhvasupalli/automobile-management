@@ -6,7 +6,7 @@ export default function AdminViewSpareParts() {
 
   const fetchSpareParts = async () => {
     try {
-      const response = await axios.get('http://localhost:2024/viewspareparts');
+      const response = await axios.get('https://automobile-management.onrender.com/viewspareparts');
       setSpareParts(response.data);
     } catch (error) {
       console.error(error.message);
@@ -16,7 +16,7 @@ export default function AdminViewSpareParts() {
 
   const deleteVehicle = async (id) => {
     try {
-      await axios.delete(`http://localhost:2024/deletespareparts/${id}`);
+      await axios.delete(`https://automobile-management.onrender.com/deletespareparts/${id}`);
       fetchSpareParts();
     } catch (error) {
       console.error(error.message);
@@ -35,7 +35,7 @@ export default function AdminViewSpareParts() {
           spareparts.map((sparepart, index) => (
             <div key={index} className="card">
               <div className="card-image">
-                <img src={`http://localhost:2024/sparepartsimage/${sparepart.file}`} alt="sparepart" />
+                <img src={`https://automobile-management.onrender.com/sparepartsimage/${sparepart.file}`} alt="sparepart" />
               </div>
               <div className="card-details">
                 <h2>{sparepart.title}</h2>

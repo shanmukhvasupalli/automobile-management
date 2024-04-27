@@ -14,7 +14,7 @@ export default function ViewSellers() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:2024/viewsellers');
+      const response = await axios.get('https://automobile-management.onrender.com/viewsellers');
       setUsers(response.data);
     } catch (error) {
       console.error(error.message);
@@ -27,7 +27,7 @@ export default function ViewSellers() {
 
   const deleteUsers = async (email) => {
     try {
-      await axios.delete(`http://localhost:2024/deleteseller/${email}`);
+      await axios.delete(`https://automobile-management.onrender.com/deleteseller/${email}`);
       fetchUsers();
     } catch (error) {
       console.error(error.message);

@@ -31,7 +31,7 @@ export default function Registration()
     e.preventDefault();
     try 
     {
-      const response = await axios.post('http://localhost:2024/insertuser', formData);
+      const response = await axios.post('https://automobile-management.onrender.com/insertuser', formData);
       if (response.status === 200) 
       {
         //It will set all fields to ""

@@ -33,7 +33,7 @@ export default function AddSpareParts() {
             for (let key in formData) {
                 formDataToSend.append(key, formData[key]);
             }
-            const response = await axios.post('http://localhost:2024/addspareparts', formDataToSend, {
+            const response = await axios.post('https://automobile-management.onrender.com/addspareparts', formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data' // Set content type for FormData
                 }

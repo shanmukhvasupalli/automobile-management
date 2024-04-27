@@ -25,7 +25,7 @@ export default function SellerLogin({onSellerLogin})
     e.preventDefault();
     try 
     {
-      const response = await axios.post('http://localhost:2024/checksellerlogin', formData);
+      const response = await axios.post('https://automobile-management.onrender.com/checksellerlogin', formData);
       if (response.data!=null) 
       {
         onSellerLogin();

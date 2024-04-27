@@ -35,7 +35,7 @@ export default function SellerRegistration()
     e.preventDefault();
     try 
     {
-      const response = await axios.post('http://localhost:2024/insertseller', formData);
+      const response = await axios.post('https://automobile-management.onrender.com/insertseller', formData);
       if (response.status === 200) 
       {
         //It will set all fields to ""

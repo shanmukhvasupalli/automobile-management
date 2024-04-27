@@ -36,7 +36,7 @@ export default function UpdateProfile() {
       }
       if (Object.keys(updatedData).length !== 0) {
         updatedData.email = userData.email;
-        const response = await axios.put('http://localhost:2024/updateprofile', updatedData);
+        const response = await axios.put('https://automobile-management.onrender.com/updateprofile', updatedData);
         setMessage(response.data);
         setError('');
         const updatedUserData = { ...initialData, ...updatedData };

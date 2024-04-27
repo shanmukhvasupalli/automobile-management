@@ -12,7 +12,7 @@ export default function VehicleDetails() {
   useEffect(() => {
     const fetchVehicleData = async () => {
       try {
-        const response = await axios.get(`http://localhost:2024/viewvehicledetails/${id}`);
+        const response = await axios.get(`https://automobile-management.onrender.com/viewvehicledetails/${id}`);
         setVehicleData(response.data);
       } catch (error) {
         setError(error.message);
@@ -49,7 +49,7 @@ export default function VehicleDetails() {
     vehicleData ? (
       <div className="vehicle-details">
         <div className="vehicle-image">
-          <img src={`http://localhost:2024/vehicleimage/${vehicleData.file}`} alt={vehicleData.title} />
+          <img src={`https://automobile-management.onrender.com/vehicleimage/${vehicleData.file}`} alt={vehicleData.title} />
         </div>
         <div className="vehicle-info">
           <h2>{vehicleData.title}</h2>
