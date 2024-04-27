@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 
 export default function AdminViewVehicles() {
   const [vehicles, setVehicles] = useState([]);
+  const navigate = useNavigate(); // Import and use useNavigate hook
 
   const fetchVehicles = async () => {
     try {
@@ -13,10 +15,13 @@ export default function AdminViewVehicles() {
     }
   };
 
-
   useEffect(() => {
     fetchVehicles();
   }, []);
+
+  const handleview = (id) => {
+    navigate(`/viewvehicles/${id}`); 
+  }
 
   const deleteVehicle = async (id) => {
     try {
@@ -45,7 +50,7 @@ export default function AdminViewVehicles() {
                         ))}
                     </div>
                 <p className="price">Price: <strong>{vehicle.price}</strong></p>
-                <button className="view-more">View More</button>
+                <button onClick={() => handleview(vehicle._id)} className="view-more">View More</button>
                 <button className="view-more" onClick={() => deleteVehicle(vehicle._id)}>Delete</button>
               </div>
             </div>

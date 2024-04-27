@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3 align="center">Automobile Management System</h3>
+      {/* <h3 align="center">Automobile Management System</h3> */}
       <Router>
         {isAdminLoggedIn ? (
           <AdminNavBar />

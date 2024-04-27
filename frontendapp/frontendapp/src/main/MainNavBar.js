@@ -30,7 +30,7 @@ export default function MainNavBar({onAdminLogin,onUserLogin,onSellerLogin}) {
             <Link to="/adminlogin">Admin Login</Link>
             updatation of profile image here ./../images/user.png */}
             <Link to="/login">Login</Link>
-            <Link to ="/myprofile"><img src={ProfileImage} alt="Profile" className="profile-image"/></Link>
+            {/* <Link to ="/myprofile"><img src={ProfileImage} alt="Profile" className="profile-image"/></Link> */}
         </ul>
         </nav>
 

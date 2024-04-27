@@ -7,6 +7,7 @@ router.get("/vehicleimage/:filename",require("./controllers/userController").veh
 router.get("/sparepartsimage/:filename",require("./controllers/userController").sparepartsimage)
 router.get("/viewspareparts",require("./controllers/userController").viewspareparts)
 router.get("/viewvehicledetails/:id",require("./controllers/userController").viewvehicledetails)
+router.get("/viewsparepartdetails/:id",require("./controllers/userController").viewsparepartsdetails)
 router.put("/updateprofile",require("./controllers/userController").updateprofile)
 
 router.get("/viewusers",require("./controllers/admincontroller").viewusers)

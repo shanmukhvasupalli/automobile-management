@@ -6,6 +6,8 @@ import ViewUsers from './ViewUsers';
 import ViewSellers from './ViewSellers';
 import AdminViewVehicles from './ViewVehicles';
 import AdminViewSpareParts from './ViewSpareParts';
+import ViewVehicleDetails from '../user/ViewVehicleDetails';
+import ViewSparePartsDetails from '../user/ViewSparePartsDetails'
 
 export default function AdminNavBar() {
   const navigate = useNavigate();
@@ -34,6 +36,8 @@ export default function AdminNavBar() {
          <Route path="/viewsellers" element={<ViewSellers/>} exact/>
          <Route path="/adminviewsvehicles" element={<AdminViewVehicles/>} exact/>
          <Route path="/adminviewspareparts" element={<AdminViewSpareParts/>} exact/>
+         <Route path="/viewvehicles/:id" element ={<ViewVehicleDetails/>} exact />
+          <Route path = "/viewspareparts/:id" element ={<ViewSparePartsDetails/>} exact />
         </Routes>
 
     </div>

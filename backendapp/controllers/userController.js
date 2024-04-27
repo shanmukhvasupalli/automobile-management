@@ -134,6 +134,21 @@ const viewvehicledetails = async (request, response) => {
   }
 };
 
+const viewsparepartsdetails = async (request, response) => {
+  try {
+    const id = request.params.id;
+    const spareparts = await SpareParts.findById(id);
+    if (spareparts) {
+      response.json(spareparts);
+    } else {
+      response.status(404).send('Spare Parts not found');
+    }
+  }
+  catch (error) {
+    response.status(500).send(error.message);
+  }
+};
+
 const updateprofile = async (request, response) => 
   {
     try 
@@ -159,4 +174,4 @@ const updateprofile = async (request, response) =>
       response.status(500).send(e.message);
     }
   };
-  module.exports = {insertuser, checkuserlogin, viewvehicles, vehicleimage, viewspareparts, sparepartsimage,viewvehicledetails,updateprofile}
+  module.exports = {insertuser, checkuserlogin, viewvehicles, vehicleimage, viewspareparts, sparepartsimage,viewvehicledetails,viewsparepartsdetails ,updateprofile}

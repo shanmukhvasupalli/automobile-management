@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 
 export default function AdminViewSpareParts() {
   const [spareparts, setSpareParts] = useState([]);
+  const navigate = useNavigate(); // Use useNavigate hook here
 
   const fetchSpareParts = async () => {
     try {
@@ -12,7 +14,6 @@ export default function AdminViewSpareParts() {
       console.error(error.message);
     }
   };
-  
 
   const deleteVehicle = async (id) => {
     try {
@@ -26,6 +27,10 @@ export default function AdminViewSpareParts() {
   useEffect(() => {
     fetchSpareParts();
   }, []);
+  
+  const handleview = (id) => {
+    navigate(`/viewspareparts/${id}`); 
+  }
 
   return (
     <div>
@@ -45,7 +50,7 @@ export default function AdminViewSpareParts() {
                     ))}
                 </div>
                 <p className="price">Price: <strong>{sparepart.price}</strong></p>
-                <button className="view-more">View More</button>
+                <button onClick={() => handleview(sparepart._id)} className="view-more">View More</button>
                 <button className="view-more" onClick={() => deleteVehicle(sparepart._id)}>Delete</button>
               </div>
             </div>

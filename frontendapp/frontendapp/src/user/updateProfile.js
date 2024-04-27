@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import './UpdateProfile.css'; // Import the CSS file
 
 export default function UpdateProfile() {
   const [userData, setUserData] = useState({
@@ -53,7 +54,7 @@ export default function UpdateProfile() {
   };
 
   return (
-    <div>
+    <div className="update-profile-container"> {/* Apply the class here */}
       <h3 align="center"><u>Update Profile</u></h3>
       {message ? <h4 align="center">{message}</h4> : <h4 align="center" style={{ color: 'red' }}>{error}</h4>}
       <form onSubmit={handleSubmit}>

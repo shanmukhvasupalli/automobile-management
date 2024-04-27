@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of Navigate
+import ViweVehicleDetails from './ViewVehicleDetails';
+import { Button } from 'bootstrap';
 
 export default function ViewSpareParts() {
   const [spareparts, setSpareParts] = useState([]);
+  const navigate = useNavigate(); // Use useNavigate hook here
 
   const fetchSpareParts = async () => {
     try {
@@ -16,6 +20,10 @@ export default function ViewSpareParts() {
   useEffect(() => {
     fetchSpareParts();
   }, []);
+
+  const handleview = (id)=>{
+    navigate(`/viewspareparts/${id}`); 
+  }
 
   return (
     <div>
@@ -35,7 +43,7 @@ export default function ViewSpareParts() {
                     ))}
                 </div>
                 <p className="price">Price: <strong>{sparepart.price}</strong></p>
-                <button className="view-more">View More</button>
+                <button onClick={()=>handleview(sparepart._id)} className="view-more">View More</button>
               </div>
             </div>
           ))
