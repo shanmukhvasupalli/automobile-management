@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function SellerLogin() 
+export default function SellerLogin({onSellerLogin}) 
 {
   const [formData, setFormData] = useState({
     email: '',
@@ -28,8 +28,11 @@ export default function SellerLogin()
       const response = await axios.post('http://localhost:2024/checksellerlogin', formData);
       if (response.data!=null) 
       {
-        console.log(response.data)
+        onSellerLogin();
+        localStorage.setItem("seller",JSON.stringify(response.data))
         navigate("/sellerhome");
+        //console.log(response.data)
+        //navigate("/sellerhome");
         //window.location.href = "https://lms.kluniversity.in/login/index.php"
       } 
       else 

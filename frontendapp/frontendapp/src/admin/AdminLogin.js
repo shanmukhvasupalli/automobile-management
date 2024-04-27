@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import AdminHome from './AdminHome';
 
 
-export default function AdminLogin() 
+export default function AdminLogin({onAdminLogin}) 
 {
   const [formData, setFormData] = useState({
     username: '',
@@ -28,7 +28,12 @@ export default function AdminLogin()
       const response = await axios.post('http://localhost:2024/checkadminlogin', formData);
       if (response.data!=null) 
       {
-        navigate("/AdminHome")
+        onAdminLogin(); 
+
+        localStorage.setItem('admin', JSON.stringify(response.data));
+        
+        navigate("/adminhome");
+        //navigate("/AdminHome")
       } 
       else 
       {

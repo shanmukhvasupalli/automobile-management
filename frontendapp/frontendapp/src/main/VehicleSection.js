@@ -21,7 +21,7 @@ function VehicleSection() {
     <div style={{ width: "60%", margin: "0 auto" }}>
       <Row xs={1} md={2} className="g-4">
         
-        <Col>
+        <Col className="d-flex">
           <Link to="/userlogin"  style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={cycle} style={imgStyle} />
@@ -35,7 +35,7 @@ function VehicleSection() {
           </Link>
         </Col>
 
-        <Col>
+        <Col className="d-flex">
           <Link to="/userlogin"  style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={gt} style={imgStyle} />
@@ -49,7 +49,7 @@ function VehicleSection() {
           </Link>
         </Col>
 
-        <Col>
+        <Col className="d-flex">
           <Link to="/userlogin"  style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={porshe} style={imgStyle} />
@@ -63,7 +63,7 @@ function VehicleSection() {
           </Link>
         </Col>
 
-        <Col>
+        <Col className="d-flex">
           <Link to="/userlogin" style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={bus} style={imgStyle} />
@@ -76,7 +76,8 @@ function VehicleSection() {
             </Card>
           </Link>
         </Col>
-        <Col>
+
+        <Col className="d-flex">
           <Link to="/userlogin" style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={jcb} style={imgStyle} />
@@ -89,7 +90,8 @@ function VehicleSection() {
             </Card>
           </Link>
         </Col>
-        <Col>
+
+        <Col className="d-flex">
           <Link to="/userlogin" style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={helicopter} style={imgStyle} />
@@ -102,7 +104,8 @@ function VehicleSection() {
             </Card>
           </Link>
         </Col>
-        <Col>
+
+        <Col className="d-flex">
           <Link to="/userlogin" style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={armoedvehicle} style={imgStyle} />
@@ -115,7 +118,8 @@ function VehicleSection() {
             </Card>
           </Link>
         </Col>
-        <Col>
+
+        <Col className="d-flex">
           <Link to="/userlogin" style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={ship} style={imgStyle} />
@@ -128,7 +132,8 @@ function VehicleSection() {
             </Card>
           </Link>
         </Col>
-        <Col>
+
+        <Col className="d-flex">
           <Link to="/userlogin" style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={spareparts} style={imgStyle} />
@@ -141,7 +146,8 @@ function VehicleSection() {
             </Card>
           </Link>
         </Col>
-        <Col>
+
+        <Col className="d-flex">
           <Link to="/userlogin" style={{ textDecoration: "none" }}>
             <Card>
               <Card.Img variant="top" src={accessories} style={imgStyle} />

@@ -11,7 +11,8 @@ import SellerLogin from '../seller/SellerLogin';
 import SellerRegistration from '../seller/SellerRegistration';
 import ProfileImage from './../images/user.png';
 import MyProfile from '../user/MyProfile';
-export default function MainNavBar() {
+import Login from './Login';
+export default function MainNavBar({onAdminLogin,onUserLogin,onSellerLogin}) {
   return (
     <div>
        
@@ -24,10 +25,11 @@ export default function MainNavBar() {
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/registration">Sign Up</Link>
-            <Link to="/userlogin">Login</Link>
+            {/* <Link to="/userlogin">Login</Link>
             <Link to="/sellerlogin">Seller Login</Link>
             <Link to="/adminlogin">Admin Login</Link>
-            {/* updatation of profile image here ./../images/user.png */}
+            updatation of profile image here ./../images/user.png */}
+            <Link to="/login">Login</Link>
             <Link to ="/myprofile"><img src={ProfileImage} alt="Profile" className="profile-image"/></Link>
         </ul>
         </nav>
@@ -38,11 +40,12 @@ export default function MainNavBar() {
         <Route path="/about" element={<About/>} exact/>
         <Route path="/contact" element={<Contact/>} exact/>
         <Route path="/registration" element={<Registration/>} exact/>
-        <Route path="/userlogin" element={<UserLogin/>} exact/>
-        <Route path="/adminlogin" element={<AdminLogin/>} exact/>
-        <Route path="/sellerlogin" element={<SellerLogin/>} exact/>
+        <Route path="/userlogin" element={<UserLogin onUserLogin={onUserLogin} />} exact/>
+        <Route path="/adminlogin" element={<AdminLogin onAdminLogin={onAdminLogin} />} exact/>
+        <Route path="/sellerlogin" element={<SellerLogin onSellerLogin={onSellerLogin}/>} exact/>
         <Route path="/sellerregistration" element={<SellerRegistration/>} exact />
         <Route path="/myprofile" element= {<MyProfile/>} exact/>
+        <Route path="/login" element={<Login/>} exact/>
      </Routes>
 
     </div>

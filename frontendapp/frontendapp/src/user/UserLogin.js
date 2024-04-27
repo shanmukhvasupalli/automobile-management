@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function UserLogin() 
+export default function UserLogin({onUserLogin}) 
 {
   const [formData, setFormData] = useState({
     email: '',
@@ -28,8 +28,13 @@ export default function UserLogin()
       const response = await axios.post('http://localhost:2024/checkuserlogin', formData);
       if (response.data!=null) 
       {
-        console.log(response.data)
+        onUserLogin()
+
+        localStorage.setItem("user",JSON.stringify(response.data))
+
         navigate("/userhome");
+        //console.log(response.data)
+        //navigate("/userhome");
         //window.location.href = "https://lms.kluniversity.in/login/index.php"
       } 
       else 

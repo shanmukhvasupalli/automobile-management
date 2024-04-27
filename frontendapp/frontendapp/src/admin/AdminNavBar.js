@@ -1,11 +1,20 @@
 import React from 'react'
-import { Route, Routes, Link } from 'react-router-dom'
+import { Route, Routes, Link,useNavigate } from 'react-router-dom'
 import './admin.css'
 import AdminHome from './AdminHome';
 import ViewUsers from './ViewUsers';
 import ViewSellers from './ViewSellers';
+import AdminViewVehicles from './ViewVehicles';
+import AdminViewSpareParts from './ViewSpareParts';
 
 export default function AdminNavBar() {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("isAdminLoggedIn")
+    localStorage.removeItem("admin")
+    navigate("/adminlogin")
+    window.location.reload()
+  }
   return (
     <div>
       <nav>
@@ -13,14 +22,18 @@ export default function AdminNavBar() {
             <Link  Link to="/">Home</Link>
             <Link to="/viewusers">View Users</Link>
             <Link to="/viewsellers">View Sellers</Link>
-            <Link >Logout</Link>
+            <Link to="/adminviewsvehicles">View Vehicles</Link>
+            <Link to="/adminviewspareparts">View Spare Parts</Link>
+            <Link onClick={handleLogout}>Logout</Link>
         </ul>
      </nav>
 
          <Routes>
-         <Route path="/" Component={AdminHome} exact/>
-         <Route path="/viewusers" Component={ViewUsers} exact/>
-         <Route path="/viewsellers" Component={ViewSellers} exact/>
+         <Route path="/" element={<AdminHome/>} exact/>
+         <Route path="/viewusers" element={<ViewUsers/>} exact/>
+         <Route path="/viewsellers" element={<ViewSellers/>} exact/>
+         <Route path="/adminviewsvehicles" element={<AdminViewVehicles/>} exact/>
+         <Route path="/adminviewspareparts" element={<AdminViewSpareParts/>} exact/>
         </Routes>
 
     </div>
