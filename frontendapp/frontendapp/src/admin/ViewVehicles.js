@@ -32,6 +32,10 @@ export default function AdminViewVehicles() {
     }
   }
 
+  const updateVehicle = async (id) => {
+    navigate(`/updatevehicle/${id}`);
+  }
+
   return (
     <div>
       <h1 align="center">Vehicles</h1>
@@ -51,6 +55,7 @@ export default function AdminViewVehicles() {
                     </div>
                 <p className="price">Price: <strong>{vehicle.price}</strong></p>
                 <button onClick={() => handleview(vehicle._id)} className="view-more">View More</button>
+                <button className="view-more" onClick={() => updateVehicle(vehicle._id)}>Update</button>
                 <button className="view-more" onClick={() => deleteVehicle(vehicle._id)}>Delete</button>
               </div>
             </div>

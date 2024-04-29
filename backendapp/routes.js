@@ -24,4 +24,6 @@ router.get("/viewsellers",require("./controllers/admincontroller").viewsellers)
 router.delete("/deleteseller/:email", require("./controllers/admincontroller").deleteseller)
 router.delete("/deletevehicle/:id", require("./controllers/admincontroller").deletevehicle)
 router.delete("/deletespareparts/:id", require("./controllers/admincontroller").deletespareparts)
+router.put("/updatevehicle/:id", require("./controllers/sellercontroller").updatevehicle)
+router.put("/updatespareparts/:id", require("./controllers/sellercontroller").updatesparepart)
 module.exports = {router} 

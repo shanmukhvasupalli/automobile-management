@@ -124,5 +124,55 @@ const insertseller = async (request, response) => {
         res.status(500).send(error.message);
       }
     };
+
+    const updatevehicle = async (request, response) => {
+      try {
+        const input = request.body;
+        const { id } = request.params; 
+        const vehicle = await Vehicle.findById(id);
+    
+        if (!vehicle) {
+          return response.status(404).send('Vehicle not found');
+        }
+    
+        for (const key in input) {
+          if (key !== 'file' && input[key]) { 
+            vehicle[key] = input[key];
+          }
+        }
+    
+        await vehicle.save();
+    
+        response.status(200).send('Vehicle updated successfully');
+      } catch (error) {
+        console.error(error);
+        response.status(500).send(error.message);
+      }
+    };
+    
+    const updatesparepart = async (request, response) => {
+      try {
+        const input = request.body;
+        const { id } = request.params; 
+        const sparepart = await SpareParts.findById(id);
+    
+        if (!sparepart) {
+          return response.status(404).send('Spare part not found');
+        }
+    
+        for (const key in input) {
+          if (key !== 'file' && input[key]) { 
+            sparepart[key] = input[key];
+          }
+        }
+    
+        await sparepart.save();
+    
+        response.status(200).send('Spare part updated successfully');
+      } catch (error) {
+        console.error(error);
+        response.status(500).send(error.message);
+      }
+    }
          
-  module.exports = {insertseller, checksellerlogin, addvehicle, addspareparts}
+  module.exports = {insertseller, checksellerlogin, addvehicle, addspareparts, updatevehicle, updatesparepart}

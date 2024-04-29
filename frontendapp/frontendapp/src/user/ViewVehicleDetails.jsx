@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 export default function VehicleDetails() {
   const [vehicleData, setVehicleData] = useState(null);
   const [error, setError] = useState(null);
-  // Remove showMore state and setShowMore function
   const { id } = useParams();
 
   useEffect(() => {

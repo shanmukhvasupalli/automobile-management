@@ -8,6 +8,8 @@ import AdminViewVehicles from './ViewVehicles';
 import AdminViewSpareParts from './ViewSpareParts';
 import ViewVehicleDetails from '../user/ViewVehicleDetails';
 import ViewSparePartsDetails from '../user/ViewSparePartsDetails'
+import UpdateVehicle from '../seller/UpdateVehicle';
+import UpdateSpareParts from '../seller/UpdateSpareParts';
 
 export default function AdminNavBar() {
   const navigate = useNavigate();
@@ -38,6 +40,9 @@ export default function AdminNavBar() {
          <Route path="/adminviewspareparts" element={<AdminViewSpareParts/>} exact/>
          <Route path="/viewvehicles/:id" element ={<ViewVehicleDetails/>} exact />
           <Route path = "/viewspareparts/:id" element ={<ViewSparePartsDetails/>} exact />
+          <Route path = "/updatevehicle/:id" element ={<UpdateVehicle/>} exact />
+          <Route path = "/updatesparepart/:id" element ={<UpdateSpareParts/>} exact />
+
         </Routes>
 
     </div>

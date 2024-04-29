@@ -15,17 +15,13 @@ export default function AdminViewSpareParts() {
     }
   };
 
-  const deletesparepart = async (id) => {
+  const deleteVehicle = async (id) => {
     try {
       await axios.delete(`https://automobile-management.onrender.com/deletespareparts/${id}`);
       fetchSpareParts();
     } catch (error) {
       console.error(error.message);
     }
-  }
-
-  const updatesparepart = async (id) => {
-    navigate(`/updatesparepart/${id}`);
   }
 
   useEffect(() => {
@@ -55,8 +51,7 @@ export default function AdminViewSpareParts() {
                 </div>
                 <p className="price">Price: <strong>{sparepart.price}</strong></p>
                 <button onClick={() => handleview(sparepart._id)} className="view-more">View More</button>
-                <button className="view-more" onClick={() => updatesparepart(sparepart._id)}>update</button>
-                <button className="view-more" onClick={() => deletesparepart(sparepart._id)}>Delete</button>
+                <button className="view-more" onClick={() => deleteVehicle(sparepart._id)}>Delete</button>
               </div>
             </div>
           ))
